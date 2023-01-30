@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <Search />
+      <Search searchTerm="London"/>
       <CurrWeather />
     </div>
   );

@@ -1,47 +1,35 @@
-import { useState } from 'react';
-import { AsyncPaginate } from 'react-select-async-paginate';
+import { useState, useEffect } from 'react';
 import { geoApiOptions, GEO_API_URL } from './api';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+//import { AsyncPaginate } from 'react-select-async-paginate';
+//import IconButton from '@mui/material/IconButton';
+//import SearchIcon from '@mui/icons-material/Search';
 
-const Search = ({ city }) => {
-    const [searchCity, setCity] = useState('');
 
-    const loading = (input) => {
-        return fetch(
-            `${GEO_API_URL}/cities?limit=5&namePrefix=${input}`, geoApiOptions
-        )
-        .then(res => res.json())
-        .then(res => {
-            return {
-                options: res.data.map(city => {
-                    return {
-                        value: `${city.latitude} ${city.longitude}`,
-                        label: `${city.name}, ${city.countryCode}`,
-                    }
-                })
-            }
-        })
-    }
+export default function Search({ searchTerm }) {
+    const [searchCity, setCity] = useState([]);
 
-    const handleOnChange = (search) => {
-        setCity(search);
-        city(search);
-    }
+    useEffect(() => {
+        async function doStuff() {
+            const res = await fetch(`${GEO_API_URL}/cities?limit=5&minPopulation=1000&namePrefix=${searchTerm}`, geoApiOptions);
+            const data = await res.json();
+            setCity(data.data);
+        }
+        doStuff();
+    }, [searchTerm]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        city(searchCity);
-    };
 
     return (
         <div className="search-bar">
-            <form onSbumit={handleSubmit}>
-                <input type="text" placeholder="search city..." onChange={(e) => setCity(e.target.value)} value={searchCity}></input>
-                <IconButton aria-label="search" color="secondary"><SearchIcon /></IconButton>
-            </form>
+            <h2>cities by {searchTerm}</h2>
+            <ul>
+                {searchCity.map((city) => {
+                    return (
+                        <li>
+                            <h3>{city.name}</h3>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     )
 }
-
-export default Search;

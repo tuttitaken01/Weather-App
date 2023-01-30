@@ -7,6 +7,14 @@
   justify-content: center;
 }
 
+input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-color:rgb(212, 214, 215);
+  border-width: 1px;
+}
+
 .card {
   display: flex;
   justify-content: center;
