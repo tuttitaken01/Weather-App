@@ -1,7 +1,8 @@
 const Title = () => {
     return (
         <header>
-            <h1>Meteo</h1>
+            <h1>Sky Mood</h1>
+            <p className="intro">I wonder what the sky is up to today?</p>
         </header>
     )
 }
