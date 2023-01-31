@@ -1,19 +1,22 @@
 .App {
   text-align: center;
+  font-family: 'Nunito';
 }
 
 body {
-  background-image: url("https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80");
+  background-image: url('https://images.unsplash.com/photo-1518022525094-218670c9b745?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzB8fHN1bnNldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
   background-size: cover;
 }
 
 h1 {
   font-size: 40px;
-  color:aliceblue
+  color:aliceblue;
+  font-family: 'McLaren';
 }
 .intro {
   font-size: 16px;
   color:aliceblue;
+  font-family: 'Nunito';
 }
 
 .search-bar {
@@ -22,7 +25,8 @@ h1 {
 }
 
 input {
-  padding-top: 30px;
+  margin-top: 10px;
+  padding: 10px;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -40,13 +44,14 @@ input:focus {
 .weather-data {
   margin: auto;
   margin-top: 40px;
-  width: 500px;
+  width: 400px;
   justify-content: center;
   text-align: left;
 }
 
 .content {
   padding: 10px;
+  background-color:#dcdbd7c0;
 }
 
 
@@ -95,3 +100,4 @@ input:focus {
 .icon {
   margin-top: auto;
 }
+
