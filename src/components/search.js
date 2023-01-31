@@ -19,7 +19,7 @@ const Search = () => {
             .then(
                 data => {
                     setWeatherData(data);
-                    fetch(`${UNSPLASH_API_URL}query=${city}&orientation=landscape&client_id=${UNSPLASH_API_KEY}`)
+                    fetch(`${UNSPLASH_API_URL}query=${city}&page=${randNum}&orientation=landscape&client_id=${UNSPLASH_API_KEY}`)
                     .then(res => res.json ())
                     .then(
                         data => {
