@@ -1,4 +1,4 @@
-# React Data Fetching Project
+# React Project (data fetching)
 
 In this project I used data from a third party API to create a React-based interface to present data in an interactive and engaging way.
 The concept I chose was a weather interface where the user can find out the current weather of a location.
@@ -11,7 +11,7 @@ To run this locally, clone the repo and install all dependencies ```npm install`
 - React
 - JavaScript
 - CSS and MUI
-- data fetching from API
+- API
 
 ## Summary
 
